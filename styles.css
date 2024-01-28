@@ -27,16 +27,24 @@
   
   nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center the navigation items */
   }
   
   nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block; /* Display navigation items inline */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last navigation item */
   }
   
   nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px; /* Adjust the font size as needed */
   }
   
   .intro {
