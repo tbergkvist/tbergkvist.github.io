@@ -46,11 +46,13 @@
   
   .gallery {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .gallery img {
-    width: 200px;
-    height: 150px;
-    margin-right: 10px;
+    max-height: 300px; /* Adjust the maximum height as needed */
+    width: auto;
+    margin-right: 20px;
   }
-  
