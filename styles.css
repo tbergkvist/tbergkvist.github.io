@@ -16,13 +16,13 @@
   }
   
   header {
-    background-color: #333;
+    background-color: #134e1e;
     color: #fff;
     padding: 20px 0;
   }
   
   header h1 {
-    margin: 0;
+    margin-bottom: 10px;
   }
   
   nav ul {
@@ -55,4 +55,34 @@
     max-height: 300px; /* Adjust the maximum height as needed */
     width: auto;
     margin-right: 20px;
+  }
+  .blog {
+    padding: 50px 0;
+  }
+  
+  .blog-post {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(19, 78, 30, 0.1);
+    box-shadow: 0 0 10px rgba(19, 78, 30, 1);
+    text-align: center;
+  }
+  
+  .blog-post h2 {
+    font-weight: bold;
+  }
+  
+  .blog-post img {
+    display: block;
+    margin: 20px auto 0;
+    max-width: 100%;
+  }
+  .blog-post p.date {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  .center-content {
+    text-align: center;
+    margin: 15px;
   }
