@@ -139,3 +139,7 @@
     width: auto;
     margin-right: 20px;
   }
+  .link-logo {
+    max-height: 18px;
+    width: auto;
+  }
