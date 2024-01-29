@@ -1,4 +1,4 @@
-/* Resetting default margin and padding */
+
 * {
     margin: 0;
     padding: 0;
@@ -93,4 +93,8 @@
   .center-content {
     text-align: center;
     margin: 15px;
+  }
+
+  .contact-box {
+    padding: 15px !important;
   }
