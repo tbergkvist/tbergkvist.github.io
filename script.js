@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const pictureElement = document.createElement("img");
             pictureElement.src = post.picture;
-            pictureElement.alt = "No Image";
+            pictureElement.alt = "";
 
             const textElement = document.createElement("p");
             textElement.textContent = post.text;
