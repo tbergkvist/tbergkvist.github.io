@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.querySelectorAll('.shrimp').length === 0) {
             alert('Congratulations! You have captured all the shrimps!');
             setTimeout(() => {
-                window.location.href = 'https://www.tbergkvist.github.io';
+                window.location.href = 'https://tbergkvist.github.io';
             }, 100);
         }
     };
