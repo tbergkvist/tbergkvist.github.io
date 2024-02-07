@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#gameArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(deepskyblue, rgb(10, 146, 170), rgb(1, 28, 101));
+}
+
+#net {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: url('other_pics/net.png'); /* Replace with your net image */
+    background-size: cover;
+}
+
+.shrimp {
+    position: absolute;
+    width: 44px;
+    height: 50px;
+    background-image: url('other_pics/shrimp1.png'); /* Replace with your shrimp image */
+    background-size: cover;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* Ensure the entire page uses the full viewport size */
+    height: 100%;
+    width: 100%;
+}
+
+.fishing-game-header {
+    width: 100%;
+    background-color: rgb(0, 255, 204);
+    text-align: center;
+    margin: 0px;
+    padding: 1%;
+}
+
+.fishing-game-header h1 {
+    margin: 0px;
+}
+
+.fishing-game-header a {
+    margin: 0px;
+}
+
+.fishing-game-header p {
+    margin: 0px;
+}
