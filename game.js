@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const centerY = rect.height / 2;
 
         if (Math.abs(clickX - centerX) > Math.abs(clickY - centerY)) {
-            if (clickX > centerX) moveNet(speed, 0); // Right
-            else moveNet(-speed, 0); // Left
+            if (clickX > centerX) moveNet(10*speed, 0); // Right
+            else moveNet(-10*speed, 0); // Left
         } else {
-            if (clickY > centerY) moveNet(0, speed); // Down
-            else moveNet(0, -speed); // Up
+            if (clickY > centerY) moveNet(0, 10*speed); // Down
+            else moveNet(0, -10*speed); // Up
         }
     });
 
