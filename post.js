@@ -30,8 +30,7 @@ async function loadPost() {
       postContainer.innerHTML = '<p>Failed to load the post. Please try again later.</p>';
     }
   }
-  
-  // Load the post when the page loads
+
   document.addEventListener('DOMContentLoaded', () => {
     loadPost();
   });
