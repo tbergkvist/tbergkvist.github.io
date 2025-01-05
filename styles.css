@@ -291,3 +291,104 @@ footer p {
   text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
   font-size: 1rem;
 }
+
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align the items */
+    text-align: center; /* Ensure text is centered */
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Scale down the title */
+    margin-bottom: 0.5rem; /* Add space between title and nav */
+  }
+
+  nav ul {
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center align the nav items */
+    gap: 1rem; /* Adjust spacing between items */
+  }
+
+  nav ul li {
+    font-size: 1rem; /* Scale down nav items */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* Adjust link size */
+  }
+
+  /* Reduce padding and margins for smaller screens */
+  header {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  /* Adjust container width and padding */
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  /* Intro section adjustments */
+  section.intro {
+    margin: 1rem 0;
+  }
+
+  .intro-images {
+    flex-wrap: wrap; /* Allow images to wrap to new lines */
+    gap: 0.5rem; /* Reduce the gap between images */
+  }
+
+  .intro-images img {
+    width: 150px; /* Smaller image size */
+    height: 150px;
+  }
+
+  /* Contact box adjustments */
+  .contact-box {
+    margin-top: 2%;
+  }
+
+  .contact-box a {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+    padding: 0.5rem; /* Adjust padding */
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.75rem; /* Smaller font for footer text */
+    padding: 1rem 0.5rem;
+    margin: 1%;
+  }
+
+  /* Blog styles */
+  .blog-post {
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .blog-post h1 {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  /* Project Section */
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack projects in a single column */
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem; /* Smaller font size for project titles */
+  }
+
+  .project-image {
+    width: 200px; /* Reduce image size */
+    height: 200px;
+  }
+}
+
