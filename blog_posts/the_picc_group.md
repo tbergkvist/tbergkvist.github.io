@@ -1,5 +1,5 @@
 # The PICC Group
-**Date:** 2024-01-29
+**2024-01-29**
 
 ![PICC Group](blog_pics/apsursi.png)
 

@@ -1,5 +1,5 @@
 # PICC Group Winning 1st Place!
-**Date:** 2024-08-08
+**2024-08-08**
 
 ![Winning Moment](blog_pics/win.JPG)
 

@@ -7,106 +7,155 @@
 
 /* Body */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #f9f9f9;
+  background: #e0e5ec;
+  display: flex; /* Make the body a flex container */
+  flex-direction: column; /* Stack content vertically */
+  min-height: 100vh; /* Ensure the body covers the full height of the viewport */
+  margin: 0; /* Reset margin */
 }
 
 /* Links */
 a {
   text-decoration: none;
-  color: #007BFF;
-  transition: color 0.3s ease;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #0056b3;
+  text-shadow: 0 0 10px #28a745, 0 0 20px #19692c;
+}
+
+/* Neumorphic Elements */
+.neumorphic {
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
 }
 
 /* Header */
 header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  background: #e0e5ec;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 20px;
+  box-shadow: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
+  margin: 1rem;
 }
 
 header h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #222;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-}
-
-nav ul li {
-  display: inline;
+  gap: 1.5rem;
 }
 
 nav ul li img {
-  height: 16px;
+  height: 20px;
   vertical-align: middle;
+  box-shadow: 6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff;
+  border-radius: 50%;
+}
+
+nav ul li img:hover {
+  box-shadow: 0 0 10px #28a745, 0 0 20px #19692c;
+}
+
+nav ul li a {
+  font-size: 1.2rem;
 }
 
 /* Container */
 .container {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 2rem;
+  padding-top: 0px;
+  border-radius: 20px;
+  background: transparent;
 }
 
 /* Intro Section */
 section.intro {
   text-align: center;
+  margin: 2rem 0;
 }
 
 section.intro h2 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: #222;
+  text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #a3b1c6;
 }
 
 section.intro p {
   margin-bottom: 1rem;
   color: #555;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
 }
+
+.intro-images {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.intro-images img {
+  width: 225px; /* Set the desired width */
+  height: 225px; /* Set the desired height */
+  object-fit: cover; /* Crops the image to fill the dimensions */
+  border-radius: 10px; /* Optional: adds rounded corners */
+  box-shadow: 6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff; /* Neumorphic shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-images img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
+}
+
 
 /* Contact Box */
 .contact-box {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 4%;
 }
 
 .contact-box h2 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #222;
+  text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #a3b1c6;
 }
 
 .contact-box p {
+  font-size: 1rem;
   color: #555;
-  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
 }
 
 .contact-box a {
-  color: #007BFF;
-  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  color: #333;
   text-decoration: none;
-}
-
-.contact-box a:hover {
-  color: #0056b3;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
 }
 
 /* Footer */
@@ -114,12 +163,19 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.875rem;
-  color: #999;
-  border-top: 1px solid #ddd;
+  color: #777;
+  border-radius: 20px;
+  background: #e0e5ec;
+  box-shadow: inset 6px 6px 12px #a3b1c6, inset -6px -6px 12px #ffffff;
+  margin-top: auto; /* Push the footer to the bottom if there's not enough content */
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
 }
 
 footer p {
   margin: 0;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
 }
 
 /* Blog Styles */
@@ -131,47 +187,107 @@ footer p {
 }
 
 .blog-post {
-  padding: 1.5rem;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
 }
 
 .blog-post h1 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.blog-date {
-  font-size: 0.875rem;
-  color: #777;
-  margin-bottom: 1rem;
+  text-align: center;
+  color: #222;
+  text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #a3b1c6;
 }
 
 .blog-post img {
   max-width: 100%;
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 1rem 0;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
 }
 
 .blog-post p {
-  margin: 1rem 0;
-  color: #555;
+  color: #333;
+  text-align: center;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
 }
 
-.blog-post a {
-  color: #007BFF;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.post-container img {
+  max-width: 100%; /* Scale down to fit within the container */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Remove inline-block space below images */
+  margin: 10px auto; /* Add some spacing and center the image */
 }
 
-.blog-post a:hover {
-  color: #0056b3;
+/* Optional: Add borders or shadows for a better appearance */
+.post-container img {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Titles */
-.blog-post h1 {
+
+/* Project Section Styling */
+.engineering-projects {
+  padding: 2rem 1rem;
+}
+
+.engineering-projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #a3b1c6;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  gap: 2rem; /* Space between grid items */
+  margin-top: 2rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
+}
+
+.project-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-align: center; /* Center the title */
+  color: #222;
+  text-shadow: 1px 1px 4px #ffffff, -1px -1px 4px #a3b1c6;
+  margin-bottom: 1rem;
+}
+
+.project-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: #555;
+  text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #a3b1c6;
+  font-size: 1rem;
 }
