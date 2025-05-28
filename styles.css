@@ -72,8 +72,13 @@ nav ul li a {
 
 /* Intro Section */
 section.intro {
-  text-align: center;
-  margin: 2rem 0;
+  display: flex;              /* Layout side-by-side */
+  align-items: center;        /* Vertically center image and text */
+  justify-content: center;    /* Optional: center whole block */
+  gap: 2rem;                  /* Space between image and text */
+  margin: 6rem 0 2rem; 
+  text-align: left;           /* Align text to the left */
+  flex-wrap: wrap;            /* Allow wrapping on small screens */
 }
 
 section.intro h2 {
@@ -85,6 +90,13 @@ section.intro p {
   margin-bottom: 1rem;
   color: #555;
   font-size: 1.2rem;
+}
+
+.intro-text {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Vertically center text */
+  text-align: center; 
 }
 
 .intro-images {
@@ -106,7 +118,7 @@ section.intro p {
 /* Contact Box */
 .contact-box {
   text-align: center;
-  margin-top: 4%;
+  margin-top: 12%;
 }
 
 .contact-box h2 {
