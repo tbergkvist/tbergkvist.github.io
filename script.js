@@ -19,6 +19,15 @@ async function loadBlogPosts() {
       // Set the inner HTML of the link to the post content
       linkElement.innerHTML = postHtml;
 
+      // Inject label badge after the h1
+      if (post.label) {
+        const badge = document.createElement('span');
+        badge.className = `post-label ${post.label}`;
+        badge.textContent = post.label;
+        const datePara = linkElement.querySelector('h1 + p');
+        if (datePara) datePara.insertAdjacentElement('afterend', badge);
+      }
+
       // Append the link element directly to the container
       blogContainer.appendChild(linkElement);
     }

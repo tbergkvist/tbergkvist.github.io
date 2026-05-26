@@ -161,6 +161,33 @@ footer p {
   margin: 0;
 }
 
+/* Post Labels */
+.post-label {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.post-label.update {
+  background: #e3eeff;
+  color: #1a60c8;
+}
+
+.post-label.serious {
+  background: #e3f7ee;
+  color: #15845d;
+}
+
+.post-label.unserious {
+  background: #fff3e3;
+  color: #c07820;
+}
+
 /* Blog Styles */
 .blog-container {
   margin-top: 2rem;
@@ -197,6 +224,14 @@ footer p {
 
 .blog-post p {
   color: #333;
+  text-align: center;
+}
+
+.post-container h1 {
+  text-align: center;
+}
+
+.post-container h1 + p {
   text-align: center;
 }
 

@@ -11,13 +11,14 @@ cat > "blog_posts/$filename" <<EOF
 # $title
 **$date**
 
+
 EOF
 
 tmp=$(mktemp)
 node -e "
 const fs = require('fs');
 const posts = JSON.parse(fs.readFileSync('blog_posts/posts.json'));
-posts.unshift({ filename: '$filename', title: '$title', date: '$date' });
+posts.unshift({ filename: '$filename', title: '$title', date: '$date', label: 'update' });
 fs.writeFileSync('$tmp', JSON.stringify(posts, null, 2));
 "
 mv "$tmp" blog_posts/posts.json
