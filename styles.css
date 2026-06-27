@@ -183,6 +183,11 @@ footer p {
   color: #15845d;
 }
 
+.post-label.mini-project {
+  background: #e7f6f4;
+  color: #14756f;
+}
+
 .post-label.unserious {
   background: #fff3e3;
   color: #c07820;
@@ -407,4 +412,3 @@ footer p {
     height: 200px;
   }
 }
-

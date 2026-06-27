@@ -1,9 +1,15 @@
 [
   {
+    "filename": "building_a_game_by_not_looking_at_the_code.md",
+    "title": "Building a game by not looking at the code",
+    "date": "2026-06-27",
+    "label": "mini-project"
+  },
+  {
     "filename": "cable_length.md",
     "title": "Got any long cables?",
     "date": "2025-01-09",
-    "label": "serious"
+    "label": "mini-project"
   },
   {
     "filename": "new_website.md",
@@ -21,7 +27,7 @@
     "filename": "ann_ga_pong.md",
     "title": "Artificial Neural Networks trained by a Genetic Algorithm to play... Pong?!",
     "date": "2024-05-28",
-    "label": "serious"
+    "label": "mini-project"
   },
   {
     "filename": "picc_progress.md",
