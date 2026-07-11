@@ -1,5 +1,26 @@
+function trackBlogPostClick(event, post) {
+  if (typeof gtag !== 'function') return;
+
+  gtag('event', 'blog_post_click', {
+    event_category: 'blog',
+    event_label: post.title,
+    blog_post_title: post.title,
+    blog_post_filename: post.filename,
+    blog_post_label: post.label || 'unlabeled',
+    transport_type: 'beacon',
+  });
+}
+
+function updatePostFade(linkElement) {
+  linkElement.classList.toggle(
+    'blog-post-collapsed',
+    linkElement.scrollHeight > linkElement.clientHeight + 1
+  );
+}
+
 async function loadBlogPosts() {
   const blogContainer = document.getElementById('blog-container');
+  if (!blogContainer) return;
 
   try {
     const response = await fetch('blog_posts/posts.json');
@@ -14,7 +35,8 @@ async function loadBlogPosts() {
       // Create a link element for the entire card
       const linkElement = document.createElement('a');
       linkElement.href = `post.html?filename=${encodeURIComponent(post.filename)}`;
-      linkElement.className = 'blog-post'; // Add class for styling
+      linkElement.className = 'blog-post';
+      linkElement.addEventListener('click', (event) => trackBlogPostClick(event, post));
 
       // Set the inner HTML of the link to the post content
       linkElement.innerHTML = postHtml;
@@ -30,6 +52,12 @@ async function loadBlogPosts() {
 
       // Append the link element directly to the container
       blogContainer.appendChild(linkElement);
+
+      requestAnimationFrame(() => updatePostFade(linkElement));
+
+      for (const image of linkElement.querySelectorAll('img')) {
+        image.addEventListener('load', () => updatePostFade(linkElement), { once: true });
+      }
     }
   } catch (error) {
     console.error('Error loading blog posts:', error);
@@ -37,4 +65,4 @@ async function loadBlogPosts() {
   }
 }
 
-loadBlogPosts();
+document.addEventListener('DOMContentLoaded', loadBlogPosts);

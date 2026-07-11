@@ -202,6 +202,9 @@ footer p {
 }
 
 .blog-post {
+  position: relative;
+  max-height: 550px;
+  overflow: hidden;
   padding: 2rem;
   background: #ffffff;
   border-radius: 20px;
@@ -218,6 +221,18 @@ footer p {
   font-size: 1.5rem;
   text-align: center;
   color: #222;
+}
+
+.blog-post.blog-post-collapsed::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4rem;
+  pointer-events: none;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0), #ffffff 75%);
 }
 
 .blog-post img {
