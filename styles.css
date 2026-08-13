@@ -296,6 +296,16 @@ footer p {
   margin: 10px auto; /* Add some spacing and center the image */
 }
 
+/* Opt-in: add class="img-small" to an <img> in a post's markdown to cap it
+   well under half the column width, instead of the default full width. */
+.post-container img.img-small,
+.blog-post img.img-small {
+  max-width: 40%;
+  display: block;
+  height: auto;
+  margin: 10px auto;
+}
+
 /* Optional: Add borders or shadows for a better appearance */
 .post-container img {
   border: 1px solid #ccc;
