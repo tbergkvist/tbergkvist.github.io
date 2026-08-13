@@ -245,6 +245,22 @@ footer p {
 .blog-post p {
   color: #333;
   text-align: center;
+  margin: 1rem 0;
+}
+
+.blog-post ul,
+.blog-post ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.blog-post li {
+  margin: 0.4rem 0;
+}
+
+.blog-post hr {
+  margin: 1.5rem 0;
 }
 
 .post-container h1 {
@@ -253,6 +269,24 @@ footer p {
 
 .post-container h1 + p {
   text-align: center;
+}
+
+.post-container p {
+  margin: 1rem 0;
+}
+
+.post-container ul,
+.post-container ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.post-container li {
+  margin: 0.4rem 0;
+}
+
+.post-container hr {
+  margin: 1.5rem 0;
 }
 
 .post-container img {
