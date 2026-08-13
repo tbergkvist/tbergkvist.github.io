@@ -9,6 +9,7 @@ First of all, if you are not working in particle physics, you might wonder what 
 
 Imagine a one-week hackathon, but instead of getting some credits for AI usage and being forced to use some startup's shitty SaaS prototype, you get a particle beam from the <a href="https://en.wikipedia.org/wiki/Proton_Synchrotron" style="color:#1a60c8">Proton Synchrotron</a>.
 If that doesn't sound cool enough, you also get an experimental area enclosed by thick concrete blocks to protect everyone outside from the radiation from the beam, as well as a control room with measurement equipment connected to both the Proton Synchrotron beam data and experimental area equipment. 
+
 Inside such a control room, I spent most of the past week, solving hard problems together with incredible engineers and physicists.
 
 <img class="img-small" src="blog_pics/ps_downsized.jpg" alt="Entrance to the experimental area, with the beam coming from the Proton Synchrotron">
