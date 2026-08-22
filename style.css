@@ -97,18 +97,6 @@ button {
   top: 0;
 }
 
-/* no room beside the panel on a narrow screen, so it sits above it */
-@media (max-width: 46rem) {
-  #controls {
-    align-self: flex-end;
-    flex-direction: row;
-    gap: 0.5rem;
-    left: auto;
-    margin: 0;
-    position: static;
-  }
-}
-
 .name, nav a, summary, h1, h2, h3 { text-transform: uppercase; }
 
 h1, h2, h3 { line-height: 1.25; margin: 2rem 0 0.5rem; }
@@ -192,6 +180,63 @@ details img {
   max-width: 12rem;
   position: absolute;
   right: 0;
+}
+
+@media (max-width: 46rem) {
+  html {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: clamp(0.5rem, 4vw, 1rem);
+  }
+
+  body { font-size: clamp(0.8125rem, 3.75vw, 1rem); }
+  .panel { padding: clamp(0.75rem, 4vw, 1.25rem); }
+  main { overflow-wrap: anywhere; }
+
+  #controls {
+    box-sizing: border-box;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    left: auto;
+    margin: 0;
+    position: static;
+    width: 100%;
+  }
+
+  header {
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  nav {
+    display: grid;
+    gap: 0.25rem 1rem;
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  nav a { margin-left: 0; }
+
+  .post-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  footer {
+    align-items: center;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer small { grid-column: 1 / -1; }
+  footer .button { text-align: center; }
+
+  #hud {
+    align-self: stretch;
+    box-sizing: border-box;
+    justify-content: flex-end;
+  }
 }
 
 .button {

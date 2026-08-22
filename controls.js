@@ -1,16 +1,16 @@
 // Applies both switches before the page paints, and flips them on click.
 const root = document.documentElement;
-const chrome = document.querySelector('meta[name="theme-color"]');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
 
 // the stored choice is written only on a click, so an untouched browser keeps
 // following the system setting
 function apply(theme) {
   root.dataset.theme = theme;
-  chrome.content = getComputedStyle(root).getPropertyValue("--background").trim();
+  themeMeta.content = getComputedStyle(root).getPropertyValue("--background").trim();
 }
 
 apply(localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
-root.dataset.shapes = localStorage.shapes || "on";
+root.dataset.shapes = localStorage.shapes || (window.matchMedia("(max-width: 46rem)").matches ? "off" : "on");
 
 document.addEventListener("click", (event) => {
   const { id } = event.target;
