@@ -5,9 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Engineering · Teo Bergkvist</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/controls.js"></script>
 <link rel="alternate" type="application/rss+xml" title="Teo Bergkvist" href="/feed.xml">
 </head>
 <body>
+<canvas></canvas>
+<div id="controls">
+<button id="theme" aria-label="Switch theme"></button>
+<button id="shapes" aria-label="Toggle background shapes"></button>
+</div>
+
+<div class="panel">
 <header>
 <a class="name" href="/">Teo Bergkvist</a>
 <nav>
@@ -17,33 +25,55 @@
 <a href="/feed.xml">rss</a>
 </nav>
 </header>
+
 <main>
 <h1>Engineering Projects</h1>
 
+<article class="project">
 <h2><a href="https://github.com/PICC-Group/pynanovna">pynanovna</a></h2>
-<img src="/img/pynanovna.svg" alt="pynanovna">
+<img class="when-light" src="/img/pynanovna_dark.svg" alt="pynanovna">
+<img class="when-dark" src="/img/pynanovna_light.svg" alt="">
 <p>I co-founded the first API-based Python library for using a NanoVNA. I am currently the maintainer of the project.</p>
+</article>
 
+<article class="project">
 <h2><a href="https://picc-group.github.io">PICC</a></h2>
-<img src="/img/picc-logo.svg" alt="PICC Logo">
+<img class="logo" src="/img/picc-logo.svg" alt="PICC Logo">
 <p>Polarization and Impedance Controlled Car, 1st place winners in the IEEE AP-S Student Design Contest 2024.</p>
+</article>
 
+<article class="project">
 <h2><a href="/pdf/Alan-robot.pdf">Project Alan</a></h2>
-<img src="/img/alan.png" alt="Alan Robot">
+<img class="logo" src="/img/alan.png" alt="Alan Robot">
 <p>Alan is a differential drive robot that navigates using a depth camera.</p>
+</article>
 
+<article class="project">
 <h2><a href="https://github.com/myrnastet">Myrnästet</a></h2>
-<img src="/img/myrnastet.png" alt="Myrnästet Logo">
+<img class="logo" src="/img/myrnastet.png" alt="Myrnästet Logo">
 <p>Myrnästet is a small coding society that I cofounded. We work with open source projects in AI, mathematics, games and digital art. At the moment we are about 10 members.</p>
+</article>
 
+<article class="project">
 <h2><a href="https://lundformulastudent.se/">Lund Formula Student Driverless Team</a></h2>
-<img src="/img/lfs.png" alt="Lund Formula Student">
+<img class="logo" src="/img/lfs.png" alt="Lund Formula Student">
 <p>I worked with perception algorithms for point cloud data in the 2023-2024 Driverless Team, with the goal of identifying obstacles to avoid.</p>
+</article>
+
 </main>
 <footer>
-<a href="mailto:bergkvist.teo@protonmail.com">bergkvist.teo@protonmail.com</a>
-<a href="https://github.com/tbergkvist">GitHub</a>
-<a href="https://www.linkedin.com/in/teobergkvist">LinkedIn</a>
+<small>© Teo Bergkvist 2026</small>
+<a class="button" href="https://github.com/tbergkvist">GitHub</a>
+<a class="button" href="https://www.linkedin.com/in/teobergkvist">LinkedIn</a>
 </footer>
+</div>
+
+<div id="hud">
+<time></time>
+<span>COLLISIONS <b>000</b></span>
+<a href="/fishing.html" aria-label="Shrimp fishing">🦐</a>
+</div>
+
+<script type="module" src="/shapes.js"></script>
 </body>
 </html>

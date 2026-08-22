@@ -5,9 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PICC Progress · Teo Bergkvist</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/controls.js"></script>
 <link rel="alternate" type="application/rss+xml" title="Teo Bergkvist" href="/feed.xml">
 </head>
 <body>
+<canvas></canvas>
+<div id="controls">
+<button id="theme" aria-label="Switch theme"></button>
+<button id="shapes" aria-label="Toggle background shapes"></button>
+</div>
+
+<div class="panel">
 <header>
 <a class="name" href="/">Teo Bergkvist</a>
 <nav>
@@ -17,15 +25,25 @@
 <a href="/feed.xml">rss</a>
 </nav>
 </header>
+
 <main>
 <h1>PICC Progress</h1>
 <time>2024-02-10</time>
 <p>We have started working with the hardware of the PICC setup now. Yesterday we also sent out requests for sponsorships and grants to a number of companies and foundations. Let's hope we can raise enough to go to Florence!</p>
 </main>
 <footer>
-<a href="mailto:bergkvist.teo@protonmail.com">bergkvist.teo@protonmail.com</a>
-<a href="https://github.com/tbergkvist">GitHub</a>
-<a href="https://www.linkedin.com/in/teobergkvist">LinkedIn</a>
+<small>© Teo Bergkvist 2026</small>
+<a class="button" href="https://github.com/tbergkvist">GitHub</a>
+<a class="button" href="https://www.linkedin.com/in/teobergkvist">LinkedIn</a>
 </footer>
+</div>
+
+<div id="hud">
+<time></time>
+<span>COLLISIONS <b>000</b></span>
+<a href="/fishing.html" aria-label="Shrimp fishing">🦐</a>
+</div>
+
+<script type="module" src="/shapes.js"></script>
 </body>
 </html>
