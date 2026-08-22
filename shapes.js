@@ -13,12 +13,12 @@ const furious = document.body.hasAttribute("data-angry");  // the 404 page
 const clock = document.querySelector("#hud time");
 const tally = document.querySelector("#hud b");
 // the count follows you from page to page, and starts over on a reload
-if (performance.getEntriesByType("navigation")[0].type === "reload") sessionStorage.collisions = 0;
+if (performance.getEntriesByType("navigation")[0]?.type === "reload") sessionStorage.collisions = 0;
 let collisions = Number(sessionStorage.collisions || 0);
-let greeted = false;
 
-const show = () => tally.textContent = String(collisions).padStart(3, "0");
-const tick = () => clock.textContent = new Date().toTimeString().slice(0, 8);
+// a page without the HUD is fine; it just has nothing to write to
+const show = () => tally && (tally.textContent = String(collisions).padStart(3, "0"));
+const tick = () => clock && (clock.textContent = new Date().toTimeString().slice(0, 8));
 
 const COLOURS = ["#1a60c8", "#28a745", "#c07820", "#a3b1c6", "#e8c33c"];
 
@@ -108,13 +108,6 @@ function frame() {
 
   while (shapes.length < 7) {
     shapes.push(shape(random(0, canvas.width), random(0, canvas.height), random(14, 30), 0.3));
-  }
-
-  if (!greeted) {
-    greeted = true;
-    // below the panel, where there is room for the bubble to be read, and it
-    // stays up for as long as this shape survives
-    Object.assign(shapes[0], { x: 90, y: canvas.height - 70, says: "Don't like us? Disable shapes at [\u25c6]", talk: 1800 });
   }
 
   for (const item of shapes.concat(fragments)) {
