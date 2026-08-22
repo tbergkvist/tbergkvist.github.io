@@ -1,10 +1,6 @@
-# teo.bergkvist.io
-
-Hand-written HTML, served by GitHub Pages from the repository root.
-
-To add a blog post: write `posts/<name>.md` with a `title:` and `date:`
-frontmatter block, then run `./build.py`. It renders `blog/<name>.html`,
-updates the list in `blog.html` and rewrites `feed.xml`. It touches nothing
-else.
+# My personal website.
+- Blog containing life and project updates.
+- Project descriptions that don't fit on linkedin or my CV.
+- Hidden fishing game.
 
 Preview with `python3 -m http.server`.
