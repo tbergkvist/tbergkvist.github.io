@@ -15,7 +15,7 @@ them. A post looks like:
 import re
 from datetime import datetime, timezone
 from email.utils import format_datetime
-from html import escape
+from html import escape, unescape
 from pathlib import Path
 
 SITE = "https://teo.bergkvist.io"
@@ -96,6 +96,12 @@ def markdown_to_html(text):
     return "\n".join(html)
 
 
+def summarise(html):
+    """The opening of a post, as the search result and link preview show it."""
+    text = " ".join(unescape(re.sub("<[^>]+>", " ", html)).split())
+    return escape(text if len(text) <= 155 else text[:155].rsplit(" ", 1)[0] + "\u2026")
+
+
 # --- posts ----------------------------------------------------------------
 
 shell = (ROOT / "post.html").read_text()
@@ -106,12 +112,15 @@ for path in ROOT.glob("posts/*.md"):
     meta = dict(line.split(": ", 1) for line in frontmatter.splitlines())
     meta["url"] = f"/blog/{path.stem}.html"
     meta["body"] = markdown_to_html(body.strip())
+    meta["summary"] = summarise(meta["body"])
     posts.append(meta)
 
 posts.sort(key=lambda post: post["date"], reverse=True)
 
 for post in posts:
     page = shell.replace("<!-- title -->", escape(post["title"]))
+    page = page.replace("<!-- summary -->", post["summary"])
+    page = page.replace("<!-- url -->", post["url"])
     page = page.replace("<!-- date -->", post["date"])
     page = page.replace("<!-- content -->", post["body"])
     (ROOT / post["url"].strip("/")).write_text(page)
@@ -157,6 +166,20 @@ items = "".join(
   </channel>
 </rss>
 """
+)
+
+# --- sitemap.xml ----------------------------------------------------------
+
+urls = ["/"] + sorted(
+    f"/{path.name}" for path in ROOT.glob("*.html")
+    if path.name not in ("index.html", "post.html", "404.html")
+) + [post["url"] for post in posts]
+
+(ROOT / "sitemap.xml").write_text(
+    '<?xml version="1.0" encoding="utf-8"?>\n'
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    + "".join(f"  <url><loc>{SITE}{url}</loc></url>\n" for url in urls)
+    + "</urlset>\n"
 )
 
 print(f"Rendered {len(posts)} posts")
