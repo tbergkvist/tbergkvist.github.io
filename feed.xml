@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teo Bergkvist</title>
+    <description>Notes on engineering, physics and code.</description>
+    <link>https://teo.bergkvist.io/</link>
+    <atom:link href="https://teo.bergkvist.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Aug 2026 16:06:54 +0000</lastBuildDate>
+    <item>
+      <title>Reflections on a Test Beam</title>
+      <link>https://teo.bergkvist.io/blog/reflections_on_a_test_beam.html</link>
+      <guid>https://teo.bergkvist.io/blog/reflections_on_a_test_beam.html</guid>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;I spent a week at a test beam at CERN, here are my reflections on the experience.&lt;/p&gt;
+&lt;p&gt;First of all, if you are not working in particle physics, you might wonder what a test beam is.&lt;/p&gt;
+&lt;p&gt;Imagine a one-week hackathon, but instead of getting some credits for AI usage and being forced to use some startup&#x27;s shitty SaaS prototype, you get a particle beam from the &lt;a href=&quot;https://en.wikipedia.org/wiki/Proton_Synchrotron&quot; style=&quot;color:#1a60c8&quot;&gt;Proton Synchrotron&lt;/a&gt;.
+If that doesn&#x27;t sound cool enough, you also get an experimental area enclosed by thick concrete blocks to protect everyone outside from the radiation from the beam, as well as a control room with measurement equipment connected to both the Proton Synchrotron beam data and experimental area equipment. &lt;/p&gt;
+&lt;p&gt;Inside such a control room, I spent most of the past week, solving hard problems together with incredible engineers and physicists.&lt;/p&gt;
+&lt;img class=&quot;img-small&quot; src=&quot;https://teo.bergkvist.io/img/proton-synchrotron.jpg&quot; alt=&quot;Entrance to the experimental area, with the beam coming from the Proton Synchrotron&quot;&gt;
+&lt;p&gt;With the larger goal of testing the new inner &lt;a href=&quot;https://en.wikipedia.org/wiki/Compact_Muon_Solenoid#Tracker&quot; style=&quot;color:#1a60c8&quot;&gt;tracker&lt;/a&gt; for the high-luminosity upgrade of &lt;a href=&quot;https://en.wikipedia.org/wiki/Compact_Muon_Solenoid&quot; style=&quot;color:#1a60c8&quot;&gt;CMS&lt;/a&gt;, we also tested a lot of other subsystems, and got some real physics data. Throughout the week, every 20 seconds two beeps sounded in the control room, signalling a spill: the beam sending particles through our test setup. I still hear the beeps in my head.&lt;/p&gt;
+&lt;img class=&quot;img-small&quot; src=&quot;https://teo.bergkvist.io/img/control-room.jpeg&quot; alt=&quot;The control room, with screens showing beam data and the interface to control the beam&quot;&gt;
+&lt;p&gt;Some reflections:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;No matter how prepared you are before, your stuff will break. And if it doesn&#x27;t break, somebody else&#x27;s stuff will break, breaking your stuff.&lt;/li&gt;
+  &lt;li&gt;Debugging and fixing things under extreme time pressure is &lt;strong&gt;hard&lt;/strong&gt;, but also very fun.&lt;/li&gt;
+  &lt;li&gt;Human communication is inefficient and prone to errors. This might be one of the largest bottlenecks during a test beam.&lt;/li&gt;
+  &lt;li&gt;Logbooks are good. Hacking at 2am feeling like a boss will not feel good the morning after unless you documented what you did.&lt;/li&gt;
+  &lt;li&gt;Keeping a good mood, even during bad times, might be the most important skill.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img class=&quot;img-small&quot; src=&quot;https://teo.bergkvist.io/img/hacking.jpeg&quot; alt=&quot;Debugging together, huddled around a laptop&quot;&gt;
+&lt;p&gt;I&#x27;ll finish this post with some poetry.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Just as computers run to the beat of the clock, humans at test beams run to the periodic double-beeps of beam spills.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Got any long cables?</title>
+      <link>https://teo.bergkvist.io/blog/cable_length.html</link>
+      <guid>https://teo.bergkvist.io/blog/cable_length.html</guid>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;Today I wrote my first article on medium. It is about using a NanoVNA (a portable type of Vector Network Analyzer) and Python to measure the length of a cable. It is a fun project with the goal of getting more people to use NanoVNAs and the Python module &lt;a href=&quot;https://github.com/PICC-Group/pynanovna&quot;&gt;pynanovna&lt;/a&gt;. 
+&lt;img src=&quot;https://teo.bergkvist.io/img/nanovna.png&quot; alt=&quot;Cover Image&quot;&gt;&lt;/p&gt;
+&lt;h3&gt;You can read the article &lt;a href=&quot;https://medium.com/@bergkvist.teo/how-to-measure-cable-length-with-nanovna-and-python-a-beginners-guide-71855400bd5e&quot;&gt;here&lt;/a&gt;.&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>PICC Group Winning 1st Place!</title>
+      <link>https://teo.bergkvist.io/blog/picc_group_win.html</link>
+      <guid>https://teo.bergkvist.io/blog/picc_group_win.html</guid>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;&lt;img src=&quot;https://teo.bergkvist.io/img/win.jpg&quot; alt=&quot;Winning Moment&quot;&gt;&lt;/p&gt;
+&lt;p&gt;We ended up winning 1st place in the IEEE Student Design Contest 2024 at the AP-S URSI conference in Florence! It has been amazing leading the team during the past year. Now it is time for new adventures!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Artificial Neural Networks trained by a Genetic Algorithm to play... Pong?!</title>
+      <link>https://teo.bergkvist.io/blog/ann_ga_pong.html</link>
+      <guid>https://teo.bergkvist.io/blog/ann_ga_pong.html</guid>
+      <pubDate>Tue, 28 May 2024 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;Last night, I sat up working on my final project for a computational biology course. The project is an attempt to train artificial neural networks to play pong, by letting them compete with each other in a genetic algorithm. The results were surprisingly good, and the project is on GitHub for anyone interested: &lt;a href=&quot;https://github.com/tbergkvist/ANN-GA-pong&quot;&gt;https://github.com/tbergkvist/ANN-GA-pong&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PICC Progress</title>
+      <link>https://teo.bergkvist.io/blog/picc_progress.html</link>
+      <guid>https://teo.bergkvist.io/blog/picc_progress.html</guid>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;We have started working with the hardware of the PICC setup now. Yesterday we also sent out requests for sponsorships and grants to a number of companies and foundations. Let&#x27;s hope we can raise enough to go to Florence!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The PICC Group</title>
+      <link>https://teo.bergkvist.io/blog/the_picc_group.html</link>
+      <guid>https://teo.bergkvist.io/blog/the_picc_group.html</guid>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <description>&lt;p&gt;&lt;img src=&quot;https://teo.bergkvist.io/img/apsursi.png&quot; alt=&quot;PICC Group&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I am happy to announce that I will, along with 3 fellow students, participate as a finalist in the IEEE AP-S Student Design Contest. We call ourselves the PICC group (Polarization and Impedance Controlled Car) and we will present an educational and fancy way to control an RC car with on-body antennas. We will compete against 5 other universities in Florence, Italy, in July. &lt;a href=&quot;https://2024.apsursi.org/sdc.php&quot;&gt;https://2024.apsursi.org/sdc.php&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

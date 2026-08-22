@@ -1,0 +1,200 @@
+:root {
+  --background: #d5d5d5;
+  --panel: #e9e9e9;
+  --text: #222;
+  --muted: #555;
+  --link: #8a5610;
+}
+
+:root[data-theme="dark"] {
+  --background: #0d0d11;
+  --panel: #14141a;
+  --text: #e9e9e9;
+  --muted: #a3b1c6;
+  --link: #c07820;
+}
+
+html {
+  background: var(--background);
+  display: flex;
+  min-height: calc(100vh - 3rem);
+  padding: 1.5rem;
+}
+
+/* the background canvas only: the fishing game has its own, inside the panel */
+body > canvas {
+  inset: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+body {
+  color: var(--text);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font: 1rem/1.6 ui-monospace, monospace;
+  gap: 0.75rem;
+  margin: auto;
+  max-width: 38rem;
+  width: 100%;
+}
+
+/* the three boxes, opaque so the drifting shapes never sit behind the text */
+.panel, #controls, #hud {
+  background: var(--panel);
+  border: 2px solid var(--text);
+}
+
+.panel { padding: 1.5rem; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-shadow: 0 0 8px currentColor; }
+
+header, footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+}
+
+header {
+  border-bottom: 2px solid var(--text);
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+header .name {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a { margin-left: 0.8rem; }
+nav a::before, summary::before { content: "["; }
+[data-theme="dark"] #theme::before { content: "[◐"; }
+[data-theme="light"] #theme::before { content: "[◑"; }
+[data-shapes="on"] #shapes::before { content: "[◆"; }
+[data-shapes="off"] #shapes::before { content: "[◇"; }
+nav a::after, summary::after, #controls button::after { content: "]"; }
+
+button {
+  background: none;
+  border: 0;
+  color: var(--link);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+/* a column of switches, just outside the panel's top right corner */
+#controls {
+  display: flex;
+  flex-direction: column;
+  left: 100%;
+  margin-left: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  top: 0;
+}
+
+/* no room beside the panel on a narrow screen, so it sits above it */
+@media (max-width: 46rem) {
+  #controls {
+    align-self: flex-end;
+    flex-direction: row;
+    gap: 0.5rem;
+    left: auto;
+    margin: 0;
+    position: static;
+  }
+}
+
+.name, nav a, summary, h1, h2, h3 { text-transform: uppercase; }
+
+h1, h2, h3 { line-height: 1.25; margin: 2rem 0 0.5rem; }
+h1 { font-size: 1.25rem; }
+h2, h3 { font-size: 1rem; }
+
+time { color: var(--muted); flex: none; font-size: 0.9rem; }
+
+/* a small box of its own, tucked under the panel */
+#hud {
+  align-self: flex-end;
+  color: var(--muted);
+  display: flex;
+  font-size: 0.75rem;
+  gap: 1rem;
+  padding: 0.15rem 0.6rem;
+}
+
+#hud time { font-size: inherit; }
+
+/* nothing collides while the shapes are off, so the count goes too */
+[data-shapes="off"] #hud span { display: none; }
+
+#game {
+  border: 2px solid var(--muted);
+  display: block;
+  height: 20rem;
+  touch-action: none;
+  width: 100%;
+}
+
+img { height: auto; max-width: 100%; }
+img.img-small { display: block; margin: 1rem auto; max-width: 60%; }
+
+.project { border-top: 2px solid var(--muted); margin-top: 2.5rem; }
+.project img { display: block; margin: 1.5rem auto; max-height: 9rem; }
+
+/* the whole card is the link, but only its heading should look like one */
+.project a { color: inherit; display: block; }
+.project h2 { color: var(--link); }
+.project a:hover { text-shadow: none; }
+.project a:hover h2 { text-shadow: 0 0 8px currentColor; }
+
+/* logos drawn as dark line art need a light panel to sit on in the dark theme */
+[data-theme="dark"] .logo { background: #e9e9e9; }
+
+/* pynanovna ships one logo per theme; show only the one that fits */
+[data-theme="dark"] .when-light, [data-theme="light"] .when-dark { display: none; }
+
+hr { border: 0; border-top: 2px solid var(--muted); margin: 2rem 0; }
+
+.post-list { list-style: none; padding: 0; }
+
+.post-list li {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+footer {
+  border-top: 2px solid var(--text);
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  padding-top: 1rem;
+}
+
+summary {
+  color: var(--link);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+details { position: relative; text-align: right; }
+
+/* out of flow, so revealing it never resizes the panel */
+details img {
+  bottom: 100%;
+  max-width: 12rem;
+  position: absolute;
+  right: 0;
+}
+
+.button {
+  border: 2px solid var(--link);
+  padding: 0.1rem 0.6rem;
+}

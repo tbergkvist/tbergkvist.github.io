@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teo Bergkvist</title>
-<meta name="description" content="My name is Teo. I'm a final year M.Sc Engineering Mathematics student at Lund University, currently at CERN building software for CMS tracker sensors.">
-<link rel="canonical" href="https://teo.bergkvist.io/">
-<meta property="og:title" content="Teo Bergkvist">
-<meta property="og:description" content="My name is Teo. I'm a final year M.Sc Engineering Mathematics student at Lund University, currently at CERN building software for CMS tracker sensors.">
-<meta property="og:url" content="https://teo.bergkvist.io/">
+<title>Shrimp Fishing · Teo Bergkvist</title>
+<meta name="description" content="The hidden fishing game. Every game shall have one, so every website should too.">
+<link rel="canonical" href="https://teo.bergkvist.io/fishing.html">
+<meta property="og:title" content="Shrimp Fishing · Teo Bergkvist">
+<meta property="og:description" content="The hidden fishing game. Every game shall have one, so every website should too.">
+<meta property="og:url" content="https://teo.bergkvist.io/fishing.html">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/style.css">
 <meta name="theme-color" content="">
@@ -34,17 +34,19 @@
 </header>
 
 <main>
-<p>My name is Teo. 👋🏼</p>
-<p>I'm a final year M.Sc Engineering Mathematics student at Lund University. 🇸🇪</p>
-<p>Currently at <a href="https://en.wikipedia.org/wiki/CERN">CERN</a>, building software for <a href="https://en.wikipedia.org/wiki/Compact_Muon_Solenoid">CMS</a> tracker sensors, and writing my thesis on ML methods in HEP analysis.</p>
-<details>
-<summary>mugshot</summary>
-<img src="/img/profile.jpg" alt="Teo Bergkvist">
-</details>
+<h1>WOOAH! You found the hidden fishing game!</h1>
+<p>As my good friend Petter once told me, "Every game shall have a
+hidden fishing game". I guess that applies to websites as well.</p>
 
-<h2>you can reach me at</h2>
-<p><a href="mailto:bergkvist.teo@protonmail.com">bergkvist.teo@protonmail.com</a></p>
+<p id="catch">CAPTURED SHRIMP <b>0</b></p>
+<canvas id="game"></canvas>
+<p><small>Move the net with the arrow keys, or click to send it further.</small></p>
+<p id="won" hidden>Congratulations! You have captured all the shrimps!
+<button id="again" class="button">Play again</button></p>
+
+<p><a href="/">Go back.</a></p>
 </main>
+<script type="module" src="/fishing.js"></script>
 <footer>
 <small>© Teo Bergkvist 2026</small>
 <a class="button" href="https://github.com/tbergkvist">GitHub</a>
