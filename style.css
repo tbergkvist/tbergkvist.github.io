@@ -40,12 +40,13 @@ body {
   width: 100%;
 }
 
-/* opaque, so the drifting shapes never sit behind the text */
-.panel {
+/* the three boxes, opaque so the drifting shapes never sit behind the text */
+.panel, #controls, #hud {
   background: var(--panel);
   border: 2px solid var(--text);
-  padding: 1.5rem;
 }
+
+.panel { padding: 1.5rem; }
 
 a { color: var(--link); text-decoration: none; }
 a:hover { text-shadow: 0 0 8px currentColor; }
@@ -76,7 +77,7 @@ nav a::before, summary::before { content: "["; }
 [data-shapes="off"] #shapes::before { content: "[◇"; }
 nav a::after, summary::after, #controls button::after { content: "]"; }
 
-#controls button {
+button {
   background: none;
   border: 0;
   color: var(--link);
@@ -87,8 +88,6 @@ nav a::after, summary::after, #controls button::after { content: "]"; }
 
 /* a column of switches, just outside the panel's top right corner */
 #controls {
-  background: var(--panel);
-  border: 2px solid var(--text);
   display: flex;
   flex-direction: column;
   left: 100%;
@@ -121,8 +120,6 @@ time { color: var(--muted); flex: none; font-size: 0.9rem; }
 /* a small box of its own, tucked under the panel */
 #hud {
   align-self: flex-end;
-  background: var(--panel);
-  border: 2px solid var(--text);
   color: var(--muted);
   display: flex;
   font-size: 0.75rem;
@@ -131,6 +128,9 @@ time { color: var(--muted); flex: none; font-size: 0.9rem; }
 }
 
 #hud time { font-size: inherit; }
+
+/* nothing collides while the shapes are off, so the count goes too */
+[data-shapes="off"] #hud span { display: none; }
 
 #game {
   border: 2px solid var(--muted);

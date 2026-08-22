@@ -15,6 +15,7 @@ const tally = document.querySelector("#hud b");
 // the count follows you from page to page, and starts over on a reload
 if (performance.getEntriesByType("navigation")[0].type === "reload") sessionStorage.collisions = 0;
 let collisions = Number(sessionStorage.collisions || 0);
+let greeted = false;
 
 const show = () => tally.textContent = String(collisions).padStart(3, "0");
 const tick = () => clock.textContent = new Date().toTimeString().slice(0, 8);
@@ -107,6 +108,13 @@ function frame() {
 
   while (shapes.length < 7) {
     shapes.push(shape(random(0, canvas.width), random(0, canvas.height), random(14, 30), 0.3));
+  }
+
+  if (!greeted) {
+    greeted = true;
+    // below the panel, where there is room for the bubble to be read, and it
+    // stays up for as long as this shape survives
+    Object.assign(shapes[0], { x: 90, y: canvas.height - 70, says: "Don't like us? Disable shapes at [\u25c6]", talk: 1800 });
   }
 
   for (const item of shapes.concat(fragments)) {
