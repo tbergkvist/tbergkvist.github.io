@@ -20,6 +20,20 @@ let collisions = Number(sessionStorage.collisions || 0);
 const show = () => tally && (tally.textContent = String(collisions).padStart(3, "0"));
 const tick = () => clock && (clock.textContent = new Date().toTimeString().slice(0, 8));
 
+// Hit counts from GoatCounter. A page nobody has read yet answers 404 with a
+// zero in the body, which is just what we want to show, so the status is not
+// checked. A failure leaves the spot empty.
+const count = (target, path, format) => {
+  const element = document.querySelector(target);
+  element && fetch(`https://tbergkvist.goatcounter.com/counter/${path}.json`)
+    .then((response) => response.json())
+    .then((data) => element.textContent = format(data.count))
+    .catch(() => {});
+};
+
+count("#stamp span", "TOTAL", (hits) => `\u00b7 ${hits} visits`);
+count("#reads", encodeURIComponent(location.pathname), (hits) => `${hits} reads`);
+
 const COLOURS = ["#1a60c8", "#28a745", "#c07820", "#a3b1c6", "#e8c33c"];
 
 const TAUNTS = [
@@ -67,6 +81,7 @@ function complain(item) {
   context.moveTo(item.x - reach * 0.4, item.y + reach * 0.5);
   context.quadraticCurveTo(item.x, item.y + reach * 0.05, item.x + reach * 0.4, item.y + reach * 0.5);
   context.stroke();
+  if (furious) return;  // on the 404 page the faces say enough
 
   context.font = "12px ui-monospace, monospace";
   const width = context.measureText(item.says).width + 10;

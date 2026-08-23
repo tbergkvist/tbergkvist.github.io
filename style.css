@@ -41,7 +41,7 @@ body {
 }
 
 /* the three boxes, opaque so the drifting shapes never sit behind the text */
-.panel, #controls, #hud {
+.panel, #controls, #hud, #stamp {
   background: var(--panel);
   border: 2px solid var(--text);
 }
@@ -119,6 +119,18 @@ time { color: var(--muted); flex: none; font-size: 0.9rem; }
 
 /* nothing collides while the shapes are off, so the count goes too */
 [data-shapes="off"] #hud span { display: none; }
+
+/* the version stamp, pinned to the corner of the screen */
+#stamp {
+  bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  left: 1.5rem;
+  padding: 0.15rem 0.6rem;
+  position: fixed;
+}
+
+#reads { color: var(--muted); font-size: 0.9rem; }
 
 #game {
   border: 2px solid var(--muted);
@@ -231,6 +243,8 @@ details img {
 
   footer small { grid-column: 1 / -1; }
   footer .button { text-align: center; }
+
+  #stamp { display: none; }
 
   #hud {
     align-self: stretch;
